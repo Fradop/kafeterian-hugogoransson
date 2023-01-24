@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static final String COFFEE_MENU = """
+    private static final String COFFEE_MENU = """
             
                 MENU
             0. Exit the program
@@ -26,5 +26,7 @@ public class Menu {
 
             """;
 
-    
+    public static String getCoffeeMenu() {
+        return COFFEE_MENU;
+    }
 }

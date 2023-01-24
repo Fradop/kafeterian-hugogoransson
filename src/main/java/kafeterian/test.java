@@ -1,6 +1,12 @@
 package kafeterian;
 
-
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.databind.ObjectReader;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,10 +17,17 @@ public class test {
         Scanner input = new Scanner(System.in);
 
         while (true) {
-            System.out.println(Menu.COFFEE_MENU);
+            System.out.println(Menu.getCoffeeMenu());
 
             int selection = input.nextInt();
             if (selection == 0) {
+                ObjectMapper mapper = new ObjectMapper();
+                ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+                try {
+                writer.writeValue(new File("src/main/java/kafeterian/json_files/test.json"), orders);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             }
             if (selection == 9) {
@@ -97,16 +110,7 @@ public class test {
                     System.out.println("Invalid selection. Please try again.");
                     continue;
             }
-            // System.out.print("Do you want extra sugar? (y/n) ");
-            // String sugar = input.next();
-            // if (sugar.equals("y")) {
-            //     addSugar = true;
-            // }
-            // System.out.print("Do you want extra milk? (y/n) ");
-            // String milk = input.next();
-            // if (milk.equals("y")) {
-            //     addMilk = true;
-            // }
+            
             if (addSugar) {
                 order += " with extra sugar";
             }
@@ -115,6 +119,17 @@ public class test {
             }
             orders.add(order);
             System.out.println("Your order has been placed: " + order);
+
+
+
+            // ObjectMapper mapper = new ObjectMapper();
+            // ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+            // try {
+            // writer.writeValue(new File("src/main/java/kafeterian/json_files"), orders);
+            // } catch (IOException e) {
+            //     e.printStackTrace();
+            // }
         }
     }
 }
+
