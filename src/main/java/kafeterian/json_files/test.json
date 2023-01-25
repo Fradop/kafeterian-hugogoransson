@@ -1,5 +1,13 @@
 [ {
-  "type" : "Latte",
+  "type" : "Americano",
+  "extraMilk" : true,
+  "extraSugar" : true
+}, {
+  "type" : "Espresso",
   "extraMilk" : false,
   "extraSugar" : false
+}, {
+  "type" : "Drip Coffee",
+  "extraMilk" : false,
+  "extraSugar" : true
 } ]
