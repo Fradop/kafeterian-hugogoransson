@@ -1,1 +1,5 @@
-[ "Espresso" ]
+[ {
+  "type" : "Latte",
+  "extraMilk" : false,
+  "extraSugar" : false
+} ]

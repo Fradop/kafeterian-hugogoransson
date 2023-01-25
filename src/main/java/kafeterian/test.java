@@ -9,15 +9,28 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import kafeterian.Coffee;
 
 
 public class test {
     public static void main(String[] args) {
-        ArrayList<String> orders = new ArrayList<>();
+        // Coffee.coffeeChoice("Ice coffee", false, false);
+        // ArrayList<String> orders = new ArrayList<>();
+        // Scanner input = new Scanner(System.in);
+
+    
+        // ArrayList<String> orders = new ArrayList<>();
+        // Scanner input = new Scanner(System.in);
+
+        ArrayList<Coffee> orders = new ArrayList<>();
         Scanner input = new Scanner(System.in);
 
+    
+
+    
+    
         while (true) {
-            System.out.println(Menu.getCoffeeMenu());
+            System.out.println(Menu.getMainMenu());
 
             int selection = input.nextInt();
             if (selection == 0) {
@@ -41,73 +54,57 @@ public class test {
             String order = "";
             String extrasugar = "Do you want extra sugar? (y/n) ";
             String extramilk = "Do you want extra milk? (y/n) ";
+            
             switch (selection) {
+          
+                case 0:
+                
+                    ObjectMapper mapper = new ObjectMapper();
+                    ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+                    try {
+                    writer.writeValue(new File("src/main/java/kafeterian/json_files/test.json"), orders);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+            
                 case 1:
-                    order = "Espresso";
+                    ArrayList<String> menu = Menu.getCoffeeMenu();
+                    Integer x = 0;
+                    // System.out.println(menu);
+                    x = x-1;
+                    System.out.println("What drink would you like to choose");
+                    x = input.nextInt();
+                    if (x == 1){
+                        System.out.println(extramilk);
+                    }
+                    String ordertest = menu.get(x);
+                    
+                    Coffee coffee = Coffee.coffeeChoice(ordertest, false, false);
+                    orders.add(coffee);
+                    System.out.println(coffee.getType());
                     break;
+
                 case 2:
-                    order = "Americano";
-                    System.out.print(extrasugar);
-                    sugar = input.next();
-                    if (sugar.equals("y")) {
-                        addSugar = true;
-                    }
-                    System.out.print(extramilk);
-                    milk = input.next();
-                    if (milk.equals("y")) {
-                        addMilk = true;
-                    }
-                    break;
-                case 3:
-                    order = "Cappuccino";
-                    break;
-                case 4:
-                    order = "Latte";
-                    break;
-                case 5:
-                    order = "Mocha";
-                    break;
-                case 6:
-                    order = "Macchiato";
-                    System.out.print(extrasugar);
-                    sugar = input.next();
-                    if (sugar.equals("y")) {
-                        addSugar = true;
-                    }
-                    System.out.print(extramilk);
-                    milk = input.next();
-                    if (milk.equals("y")) {
-                        addMilk = true;
-                    }
-                    break;
-                case 7:
-                    order = "Irish Coffee";
-                    System.out.print(extrasugar);
-                    sugar = input.next();
-                    if (sugar.equals("y")) {
-                        addSugar = true;
-                    }
-                    System.out.print(extramilk);
-                    milk = input.next();
-                    if (milk.equals("y")) {
-                        addMilk = true;
-                    }
-                    break;
-                case 8:
-                    order = "French Press";
-                    System.out.print(extrasugar);
-                    sugar = input.next();
-                    if (sugar.equals("y")) {
-                        addSugar = true;
-                    }
-                    System.out.print(extramilk);
-                    milk = input.next();
-                    if (milk.equals("y")) {
-                        addMilk = true;
-                    }
-                    break;
+                for (Coffee xy : orders) {
+                    String drink = xy.getType();
+                    boolean milk1 = xy.getExtraMilk();
+                    boolean sugar1 = xy.getExtraSugar();
+                    System.out.printf("""
+                            Drink: %s
+                            Extra milk: %s
+                            Extra sugar: %s
+                            """, drink, milk1, sugar1);
+                    System.out.print("\n");
+                    
+                    
+                    
+                        
+                    
+                }
+            
                 default:
-                    System.out.println("Invalid selection. Please try again.");
+                    System.out.println("\nInvalid selection. Please try again.");
                     continue;
             }
             
@@ -117,19 +114,16 @@ public class test {
             if (addMilk) {
                 order += " with extra milk";
             }
-            orders.add(order);
             System.out.println("Your order has been placed: " + order);
-
-
-
-            // ObjectMapper mapper = new ObjectMapper();
-            // ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
-            // try {
-            // writer.writeValue(new File("src/main/java/kafeterian/json_files"), orders);
-            // } catch (IOException e) {
-            //     e.printStackTrace();
-            // }
         }
+
+
+
+           
     }
 }
+
+
+    
+
 
