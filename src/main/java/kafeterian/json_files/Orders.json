@@ -1,0 +1,17 @@
+[ {
+  "type" : "Americano",
+  "extraMilk" : true,
+  "extraSugar" : true
+}, {
+  "type" : "Cappuccino",
+  "extraMilk" : false,
+  "extraSugar" : false
+}, {
+  "type" : "Mocha",
+  "extraMilk" : true,
+  "extraSugar" : false
+}, {
+  "type" : "Espresso",
+  "extraMilk" : false,
+  "extraSugar" : false
+} ]

@@ -1,10 +1,17 @@
 package kafeterian;
 
+import java.io.Serializable;
 
-public class CoffeeType {
+public class CoffeeType implements Serializable {
     private String type;
     private boolean extraMilk;
     private boolean extraSugar;
+
+    CoffeeType(String type, boolean extraMilk, boolean extraSugar) {
+        this.type = type;
+        this.extraMilk = extraMilk;
+        this.extraSugar = extraSugar;
+    }
 
     CoffeeType() {}
     

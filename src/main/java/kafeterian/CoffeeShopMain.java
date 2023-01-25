@@ -12,20 +12,22 @@ import java.util.ArrayList;
 
 public class CoffeeShopMain {
     public static void main(String[] args) {
-        //order.startOrdering();
+        
+        CoffeeOrder.startOrdering();
         ObjectMapper obj = new ObjectMapper();
         ArrayList<CoffeeType> neworder = new ArrayList();
+        CoffeeType newcoffee = new CoffeeType("Testing", true, false);
         
-        CoffeeOrder order = new CoffeeOrder();
-        try {
-            CoffeeType[] newOrder = obj.readValue(new File("src/main/java/kafeterian/json_files/test.json"), CoffeeType[].class);
-            for (CoffeeType test : newOrder) {
-                System.out.println(test.getType());
+        // CoffeeOrder order = new CoffeeOrder();
+        // try {
+        //     CoffeeType[] newOrder = obj.readValue(new File("src/main/java/kafeterian/json_files/test.json"), CoffeeType[].class);
+        //     for (CoffeeType test : newOrder) {
+        //         System.out.println(test.getType());
                 
-            }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        //     }
+        //     } catch (IOException e) {
+        //         e.printStackTrace();
+        //     }
     }
 }
 
