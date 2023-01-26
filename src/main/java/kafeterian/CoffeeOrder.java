@@ -121,7 +121,16 @@ public class CoffeeOrder {
                 }
             }
         }
+
+
+    public Object selectedCoffee;
+
+
+    public void selectCoffee(int choiceNum) {
     }
+    }
+    
+        
     
         
     

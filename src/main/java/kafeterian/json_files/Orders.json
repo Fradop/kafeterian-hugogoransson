@@ -26,4 +26,8 @@
   "type" : "Breve",
   "extraMilk" : false,
   "extraSugar" : false
+}, {
+  "type" : "Macchiato",
+  "extraMilk" : false,
+  "extraSugar" : true
 } ]
