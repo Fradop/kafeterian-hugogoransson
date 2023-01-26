@@ -11,7 +11,8 @@ public class CoffeeOrderTest {
     @Test
     public void pathToJsonTest() {
         String expectedPath = "src/main/java/kafeterian/json_files/Orders.json";
-        String actualPath = CoffeeOrder.pathToJson;
+        CoffeeOrder c = new CoffeeOrder();
+        String actualPath = c.getJSON();
         assertEquals(expectedPath, actualPath);
     }
 

@@ -8,6 +8,8 @@ import org.junit.Test;
 
 public class CoffeeTypeTest {
     
+  
+
     @Test
     public void testCoffeeType() {
         CoffeeType coffeeType = new CoffeeType("Latte", true, false);

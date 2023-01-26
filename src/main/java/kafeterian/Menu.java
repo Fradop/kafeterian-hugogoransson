@@ -8,7 +8,7 @@ public class Menu {
 
 
 
-    public static final String COFFEE_MENU = """
+    public final String COFFEE_MENU = """
                 Menu
 
             1. Americano
@@ -25,7 +25,7 @@ public class Menu {
             """;
 
 
-    public static String getCoffeeMenu() {
+    public String getCoffeeMenu() {
         return COFFEE_MENU;
     }
 }

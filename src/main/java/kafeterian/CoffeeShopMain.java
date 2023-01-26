@@ -10,8 +10,8 @@ public class CoffeeShopMain {
      * @param args
      */
     public static void main(String[] args) {
-        
-        CoffeeOrder.startOrdering();
+        CoffeeOrder c = new CoffeeOrder();
+        c.startOrdering();
        
     }
 }

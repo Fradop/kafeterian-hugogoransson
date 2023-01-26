@@ -30,4 +30,24 @@
   "type" : "Macchiato",
   "extraMilk" : false,
   "extraSugar" : true
+}, {
+  "type" : "Americano",
+  "extraMilk" : true,
+  "extraSugar" : false
+}, {
+  "type" : "Espresso",
+  "extraMilk" : false,
+  "extraSugar" : false
+}, {
+  "type" : "Americano",
+  "extraMilk" : true,
+  "extraSugar" : true
+}, {
+  "type" : "Americano",
+  "extraMilk" : false,
+  "extraSugar" : false
+}, {
+  "type" : "Espresso",
+  "extraMilk" : false,
+  "extraSugar" : false
 } ]
