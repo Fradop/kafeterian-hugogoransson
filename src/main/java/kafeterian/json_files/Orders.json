@@ -1,0 +1,73 @@
+[ {
+  "type" : "Americano",
+  "extraMilk" : true,
+  "extraSugar" : true
+}, {
+  "type" : "Cappuccino",
+  "extraMilk" : false,
+  "extraSugar" : false
+}, {
+  "type" : "Mocha",
+  "extraMilk" : true,
+  "extraSugar" : false
+}, {
+  "type" : "Espresso",
+  "extraMilk" : false,
+  "extraSugar" : false
+}, {
+  "type" : "Drip Coffee",
+  "extraMilk" : true,
+  "extraSugar" : false
+}, {
+  "type" : "Americano",
+  "extraMilk" : true,
+  "extraSugar" : false
+}, {
+  "type" : "Breve",
+  "extraMilk" : false,
+  "extraSugar" : false
+}, {
+  "type" : "Macchiato",
+  "extraMilk" : false,
+  "extraSugar" : true
+}, {
+  "type" : "Americano",
+  "extraMilk" : true,
+  "extraSugar" : false
+}, {
+  "type" : "Espresso",
+  "extraMilk" : false,
+  "extraSugar" : false
+}, {
+  "type" : "Americano",
+  "extraMilk" : true,
+  "extraSugar" : true
+}, {
+  "type" : "Americano",
+  "extraMilk" : false,
+  "extraSugar" : false
+}, {
+  "type" : "Espresso",
+  "extraMilk" : false,
+  "extraSugar" : false
+}, {
+  "type" : "Americano",
+  "extraMilk" : true,
+  "extraSugar" : true
+}, {
+  "type" : "Drip Coffee",
+  "extraMilk" : true,
+  "extraSugar" : true
+}, {
+  "type" : "Americano",
+  "extraMilk" : true,
+  "extraSugar" : true
+}, {
+  "type" : "Espresso",
+  "extraMilk" : false,
+  "extraSugar" : false
+}, {
+  "type" : "Breve",
+  "extraMilk" : false,
+  "extraSugar" : false
+} ]
