@@ -14,4 +14,16 @@
   "type" : "Espresso",
   "extraMilk" : false,
   "extraSugar" : false
+}, {
+  "type" : "Drip Coffee",
+  "extraMilk" : true,
+  "extraSugar" : false
+}, {
+  "type" : "Americano",
+  "extraMilk" : true,
+  "extraSugar" : false
+}, {
+  "type" : "Breve",
+  "extraMilk" : false,
+  "extraSugar" : false
 } ]

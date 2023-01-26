@@ -38,4 +38,8 @@ public class CoffeeType implements Serializable {
     public String getType() {
         return type;
     }
+
+    public CoffeeType selectCoffeeType(int choiceNum) {
+        return null;
+    }
 }

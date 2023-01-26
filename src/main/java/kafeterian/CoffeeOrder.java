@@ -5,42 +5,34 @@ import java.util.List;
 import java.util.Scanner;
 
 
-import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.ObjectReader;
 import java.io.File;
 import java.io.IOException;
 
-
-
-
-
-
-
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-
+/**
+ * This class handles the ordering process
+ */
 public class CoffeeOrder {
     private static ArrayList<Order> orders = new ArrayList<>();
     private static ArrayList<CoffeeType> drinkList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
     private static boolean continueOrdering = true;
+    public static String pathToJson = "src/main/java/kafeterian/json_files/Orders.json";
 
+
+    /**
+     * This method runs the menu and ordering process with a while loop, calls necessary methods to 
+     * get the process running like it should
+     */
     public static void startOrdering() {
 
         // HandleJson.readJson(drinkList);
 
         ObjectMapper mapper = new ObjectMapper();
-        File jsonFile = new File("src/main/java/kafeterian/json_files/Orders.json");
+        File jsonFile = new File(pathToJson);
         if(jsonFile.exists()){
             try {
                 List<CoffeeType> orders = mapper.readValue(jsonFile, new TypeReference<List<CoffeeType>>(){});
@@ -49,22 +41,14 @@ public class CoffeeOrder {
                 e.printStackTrace();
             }
         }
-
+        
+        String printCoffeMenu = Menu.getCoffeeMenu();
 
 
 
         while (continueOrdering) {
-            System.out.println("Select a coffee:");
-            System.out.println("1. Americano");
-            System.out.println("2. Cappuccino");
-            System.out.println("3. Latte");
-            System.out.println("4. Mocha");
-            System.out.println("5. Espresso");
-            System.out.println("6. Macchiato");
-            System.out.println("7. Breve");
-            System.out.println("8. Drip Coffee");
-            System.out.println("9. Print all orders");
-            System.out.println("Q. Quit program");
+       
+            System.out.println(printCoffeMenu);
 
             String choice = scanner.nextLine();
             CoffeeType selectedCoffee = null;
@@ -72,7 +56,7 @@ public class CoffeeOrder {
                 ObjectMapper mapper2 = new ObjectMapper();
                 ObjectWriter writer = mapper2.writer(new DefaultPrettyPrinter());
                 try {
-                writer.writeValue(new File("src/main/java/kafeterian/json_files/Orders.json"), drinkList);
+                writer.writeValue(new File(pathToJson), drinkList);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -112,10 +96,10 @@ public class CoffeeOrder {
                         System.out.println("The order list is empty");
                         continue;
                     }
-                    // for(Order o : orders){
-                    //     System.out.println(o);
-                    // }
-                    System.out.println(drinkList);
+                    for(CoffeeType coffeeType : drinkList){
+                        System.out.println(coffeeType.getType() + " milk: " + coffeeType.getExtraMilk() + " sugar: " + coffeeType.getExtraSugar());
+                    }
+                    // System.out.println(drinkList);
                     continue;
                     default:
                     System.out.println("Invalid selection.");
