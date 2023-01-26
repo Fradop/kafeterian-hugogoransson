@@ -2,13 +2,13 @@ package kafeterian;
 
 
 /**
- * 
+ * This class holds the final string menu that prints when the program runs
  */
 public class Menu {
 
 
 
-    public final String COFFEE_MENU = """
+    public final static String COFFEE_MENU = """
                 Menu
 
             1. Americano
@@ -25,7 +25,7 @@ public class Menu {
             """;
 
 
-    public String getCoffeeMenu() {
+    public static String getCoffeeMenu() {
         return COFFEE_MENU;
     }
 }

@@ -26,8 +26,8 @@ public class CoffeeOrder {
 
 
     /**
-     * This method runs the menu and ordering process with a while loop, calls necessary methods to 
-     * get the process running like it should
+     * This method reads the json file and runs the menu and ordering process with a while loop, 
+     * calls necessary methods to get the process running like it should
      */
     public  void startOrdering() {
 
@@ -73,7 +73,9 @@ public class CoffeeOrder {
                 }
             }
     }
-
+/**
+ * This method quits the program and saves the drinklist to the json file
+ */
  private void quitProgramSequence(){
                 continueOrdering = false;
                 ObjectMapper mapper2 = new ObjectMapper();
@@ -85,7 +87,11 @@ public class CoffeeOrder {
                 }
  }
 
-
+/**
+ * This method handles the input from the user
+ * @param choiceNum
+ * @return
+ */
  public CoffeeType selectCoffee(int choiceNum) {
         
         CoffeeType selectedCoffeeType = null;
