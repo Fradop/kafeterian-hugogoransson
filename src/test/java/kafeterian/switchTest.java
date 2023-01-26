@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class SwitchTest {
+public class switchTest {
 
     private CoffeeOrder c1 = new CoffeeOrder();
     

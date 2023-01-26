@@ -70,4 +70,8 @@
   "type" : "Breve",
   "extraMilk" : false,
   "extraSugar" : false
+}, {
+  "type" : "Mocha",
+  "extraMilk" : true,
+  "extraSugar" : true
 } ]
